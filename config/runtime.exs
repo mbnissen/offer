@@ -20,6 +20,8 @@ if System.get_env("PHX_SERVER") do
   config :offer, OfferWeb.Endpoint, server: true
 end
 
+config :offer, :mapbox, access_token: System.get_env("MAPBOX_ACCESS_TOKEN")
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
